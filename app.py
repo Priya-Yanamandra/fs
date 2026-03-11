@@ -1,19 +1,13 @@
-from sklearn.linear_model import LinearRegression
 import numpy as np
+from sklearn.linear_model import LinearRegression
 
-X = np.array([[1], [2], [3], [4], [5]])
-y = np.array([2, 4, 6, 8, 10])
+X=np.array([1,2,3,4,5]).reshape(-1,1)
 
-def train_model():
-    model = LinearRegression()
-    model.fit(X, y)
-    return model
+y=np.array([3,5,7,9,11])
 
-def predict_value(value):
-    model = train_model()
-    prediction = model.predict(np.array([[value]]))
-    return prediction[0]
+model=LinearRegression()
+model.fit(X,y)
 
-if __name__ == "__main__":
-    result = predict_value(6)
-    print("Prediction:", result)
+prediction= model.predict([[6]])
+
+print("Predicted salary for 6 years experience:",prediction[0])
