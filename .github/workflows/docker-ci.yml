@@ -30,6 +30,4 @@ jobs:
       - name: Run Docker Container
         run: docker run lr-model
       
-      - name: Deploy Container
-        run: docker run lr-model
 
